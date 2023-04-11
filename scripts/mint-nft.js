@@ -11,7 +11,7 @@ const contract = require("../artifacts/contracts/MyNFT.sol/MyNFT.json");
 
 // console.log(JSON.stringify(contract.abi));
 
-const contractAddress = "0xF9A5378e5f3e702448e820EFb29A0FEdE1D7e69E";
+const contractAddress = "0x663975B0e64667c22dC25B3c7095d075E17fAbeA";
 const nftContract = new web3.eth.Contract(contract.abi,contractAddress);
 
 //create transaction
@@ -22,7 +22,7 @@ async function mintNFT(tokenURI){
         'from' : PUBLIC_KEY,
         'to' : contractAddress,
         'nonce' : nonce,
-        'gas' : 50000,
+        'gas' : 500000,
         'data' : nftContract.methods.mintNFT(PUBLIC_KEY,tokenURI).encodeABI(),
         };
 
